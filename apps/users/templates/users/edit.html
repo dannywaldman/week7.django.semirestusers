@@ -1,0 +1,16 @@
+{% extends 'users/base.html' %}
+
+{% block title %}Edit{% endblock %}
+{% block content %}
+    <h1>Edit User</h1>
+    <form method="POST" action="{% url 'modify' %}">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value-"Update User" class="btn btn-info">
+    </form>
+{% endblock %}
+
+{% block footer %}
+    <a href="{% url 'show' id=id %}">Show</a>
+    <a href="javascript:history.back();">Go Back</a>
+{% endblock%}

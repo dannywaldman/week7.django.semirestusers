@@ -1,0 +1,15 @@
+{% extends 'users/base.html' %}
+
+{% block title %}Add User{% endblock %}
+{% block content %}
+    <h1>Add User</h1>
+    <form method="POST" action="{% url 'create' %}">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value-"Add User" class="btn btn-info">
+    </form>
+{% endblock %}
+
+{% block footer %}
+    <a href="{% url 'index' %}">Go Back</a>
+{% endblock%}
